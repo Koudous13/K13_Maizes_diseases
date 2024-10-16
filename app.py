@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras.models import load_model
 
-url= 'maize_diseases_model.keras'
+url= 'maize_diseases_model.h5'
 # Charger le modèle avec vérification
 @st.cache_resource
 def load_model_from_file():
