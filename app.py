@@ -10,7 +10,7 @@ url= 'maize_diseases_model.keras'
 @st.cache_resource
 def load_model_from_file():
     try:
-        model = load_model('k3_best_model_maize_diseases.h5')
+        model = load_model(url)
         return model
     except Exception as e:
         st.error(f"Erreur lors du chargement du modèle : {e}")
