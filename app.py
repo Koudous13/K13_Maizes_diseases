@@ -9,8 +9,12 @@ url= 'maize_diseases_model.keras'
 # Charger le modèle avec vérification
 @st.cache_resource
 def load_model_from_file():
-    model = load_model(url)
-    return model
+    try:
+        model = load_model('k3_best_model_maize_diseases.h5')
+        return model
+    except Exception as e:
+        st.error(f"Erreur lors du chargement du modèle : {e}")
+        return None
 
 # Charger et afficher le modèle
 st.title("🌽 Détection des Maladies des Feuilles de Maïs")
